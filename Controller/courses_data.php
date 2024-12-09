@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "courses";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require '../Connection/db.php';
 
 $sql = "SELECT id_course, course_name, start_date, end_date, price FROM courses";
 $result = $conn->query($sql);

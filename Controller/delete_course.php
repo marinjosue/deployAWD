@@ -1,17 +1,5 @@
 <?php
-// Configuración de la conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "courses";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica si la conexión es correcta
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
+require '../Connection/db.php';
 // Recibe el ID del curso desde la solicitud POST
 $data = json_decode(file_get_contents('php://input'), true);
 $id = isset($data['id']) ? intval($data['id']) : 0;
