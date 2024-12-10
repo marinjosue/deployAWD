@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión
-require_once('../connection/db.php');
+require_once('../Connection/db.php');
 session_start();
 
 
