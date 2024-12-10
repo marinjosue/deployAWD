@@ -35,6 +35,11 @@ while ($unit = $result_units->fetch_assoc()) {
 }
 
 $course['units'] = $units;
+$course['course_youtube'] = str_replace(
+    'watch?v=',
+    'embed/',
+    $course['course_youtube']
+);
 
 header('Content-Type: application/json');
 echo json_encode($course);
